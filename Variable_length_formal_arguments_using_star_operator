@@ -1,0 +1,15 @@
+#variable length formal argument
+'''when the end user suppose to be pass variable number of argument,to handle such a situation we do use there
+is a concept called vector declaration using
+* operator'''
+
+def sum(*d):
+    total=0
+    for i in d:
+        total=total+i
+    print("result:",total)
+
+#calling function:
+from FUNCTION_CONCEPTS import Variable_length_argunmemt_as_formal_parameters as v
+res2=v.sum(2,3,4,5,6,7,8,9,5,102,3,5,6,8,7,5,2,5,52,25,2)
+print("sum")
