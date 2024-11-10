@@ -1,0 +1,21 @@
+'''
+#LOCAL AND GLOBAL VARIABLES IN FUNCTIONS:
+local variable: means a variable declared with in the function could be access with in the function work space
+global variable: a variable would accessed outside of the function when u declare  a variable with keyword called global.
+#demo about local variable
+'''
+def total_salary(sal):
+    total=0#local varibale to the function
+    total=sal+5000
+    print("total salary after added bonus:",total)
+def emi_deduction(sal):
+    #can u access total varibale declared in above function?
+    #Ans: NO
+    pass
+
+
+#calling function:
+from FUNCTION_CONCEPTS import Local_and_gobal_variable_in_functions as l
+l.total_salary(10000)
+#print("total salary after bonus added:",total)
+l.emi_deduction(10000)
