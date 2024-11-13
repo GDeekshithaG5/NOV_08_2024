@@ -1,0 +1,372 @@
+#FUNCTION:
+
+#Assignment 1
+'''
+Write a function that calculates the salary of an employee based on their working
+hours, hourly rate, and any overtime hours they may have. Include default values
+for hourly rate and overtime pay.
+Requirements:
+Sample Code:
+ If the employee works overtime (more than 40 hours), the overtime pay rate
+should be 1.5 times the hourly rate.
+ Default hourly rate: $20 per hour.
+
+
+#sol:
+def calculate_salary(hours_worked,hourly_rate,overtime_rate):
+    if(hours_worked>40):
+        return(hourly_rate*40)+(hourly_rate*1.5*overtime_rate)
+    else:
+        return(hourly_rate*hours_worked)+(hourly_rate*overtime_rate)
+'''
+
+
+#Assignment 2
+'''
+Create a function that takes a variable number of arguments representing prices of 
+items in a shopping cart. The function should return the total price. Also, apply a 
+discount if the total amount exceeds a certain threshold. 
+Requirements: 
+ Apply a 10% discount if the total is more than $100.
+
+
+#sol:
+def shopping_cart(*Prices):
+    total=0
+    for i in Prices:
+        total+=i
+        if total<100:
+            print("Total amount:",total)
+        else:
+            print("Total amount",total)
+            discount=total*(10/100)
+            after_discount_total=total-discount
+            print("after discount total:",after_discount_total)
+
+'''
+
+
+#Assignment 3
+'''
+Write a function that accepts customer data (name, age, email, etc.) using 
+**kwargs. The function should display all the information in a structured format
+
+
+#sol:
+def customer_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+'''
+
+#Assignment 4
+'''
+Function to Check if a Number is Even or Odd
+
+#sol:
+def even_odd(num):
+    if num%2==0:
+        print("Even")
+    else:
+        print("Odd")
+    return num
+'''
+
+#Assignment 5
+'''
+Function to Find the Largest of Three Numbers
+
+#sol:
+def largest_number(a,b,c):
+    if(a>b and a>c):
+        print("A")
+    elif(b>c and b>a):
+        print("B")
+    else:
+        print("C")
+'''
+
+#Assignment 6
+'''
+Function to Calculate Factorial of a Number
+
+#sol:
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    print("Factorial of n numbers:", fact)
+'''
+
+#Assignment 7
+'''
+Function to Reverse a String
+
+#sol:
+str="deekshitha"
+print(str[::-1])
+'''
+
+#Assignment 8
+'''
+Function to Find Prime Numbers in a Range
+
+#sol:
+def prime_number(n):
+    for i in range(2,n):
+        if n%i==0:
+            return "Not prime"
+    else:
+        return "Prime"
+'''
+
+#Assignment 9
+'''
+Function to Calculate Fibonacci Sequence up to n Terms
+
+#sol:
+def fibonacci_sequence(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a,end=" ")
+        a, b = b, a + b
+'''
+
+#Assignment 10
+'''
+Function to Calculate Sum of a List
+
+#sol:
+def sum(*d):
+    total=0
+    for i in d:
+        total=total+i
+    print("result:",total)
+'''
+
+#Assignment 11
+'''
+Function to Count Vowels in a String
+
+#sol:
+def count_vowels(string):
+    vowels = "aeiouAEIOU"
+    count = 0              
+    for char in string:
+        if char in vowels: 
+            count += 1     
+    return count           
+'''
+
+#Assignment 12
+'''
+Function to Convert Celsius to Fahrenheit
+
+#sol:
+def Celsius_to_Fahrenheit(celsius):
+    fahrenheit = (celsius * 9 / 5) + 32
+    return fahrenheit
+'''
+
+#Assignment 13
+'''
+Function to Find the GCD of Two Numbers (Using Euclidean Algorithm)
+
+#sol:
+def gcd(a,b):
+    if(b!=0):
+        a, b = b, a % b
+    return a
+'''
+
+#Assignment 14
+'''
+Function to find the given is Palidrome
+'''
+
+#Assignment 15
+'''
+Function to Find the Sum of Digits of a Number
+
+#sol:
+def sum(*j):
+    total=0
+    for i in j:
+        total=total+i
+    print("result:",total)
+'''
+
+#Assignment 16
+'''
+Function to Generate Multiplication Table
+
+#sol:
+def Multiplication_Table(n):
+    for i in range(2, n+1):
+        for j in range(1,11):
+            print("%d * %d = %d" % (i, j, i * j))
+'''
+
+#Assignment 17
+'''
+Function to Find the Length of the Longest Word in a Sentence
+
+#sol:
+def longest_word_length(n):
+    words = n.split()
+    l = max(len(word) for word in words)
+    return l
+'''
+
+
+
+#Assignment 18
+'''
+Function to Check if Two Strings are Anagrams
+
+#sol:
+def check(s1, s2):
+    # the sorted strings are checked
+    if (sorted(s1) == sorted(s2)):
+        print("The strings are anagrams.")
+    else:
+        print("The strings aren't anagrams.")
+'''
+
+#Assignment 19
+'''
+Function to Calculate the Average of a List of Numbers
+
+#sol:
+def average(*n):
+    if len(n) == 0:
+        return 0
+    total = sum(n)
+    return total / len(n)
+'''
+
+#Assignment 20
+'''
+Function to Find the Second Largest Element in a List
+
+#sol:
+def Second_Largest_Element(*list1):
+
+    first_max = max(list1[0], list1[1])
+    second_max = min(list1[0], list1[1])
+
+    for i in range(2, len(list1)):
+        if list1[i] > first_max:
+            second_max = first_max
+            first_max = list1[i]
+
+        elif list1[i] > second_max and first_max != list1[i]:
+            second_max = list1[i]
+        return second_max
+'''
+
+
+#Assignment 21
+'''
+Function to Remove Duplicates from a List
+
+list_1 = [1, 2, 1, 4, 6]
+
+print(list(set(list_1)))
+'''
+
+
+#CALLING:
+from FUNCTION_CONCEPTS import Assignment_Functions as v
+'''
+res=v.calculate_salary(45,20,5)
+print(res)
+res1=v.calculate_salary(50, 30,10)
+print(res1)
+'''
+
+'''
+res=v.shopping_cart(23,24,21,78)
+print(res)
+'''
+
+'''
+res=v.customer_info(name="John Doe", age=32, email="john@example.com", phone="123-456-7890")
+print(res)
+'''
+
+'''
+res=v.even_odd(3)
+print(res)
+'''
+
+'''
+res=v.largest_number(3,2,2)
+print(res)
+'''
+
+'''
+res=v.factorial(5)
+print(res)
+'''
+
+'''
+res=v.prime_number(10)
+print(res)
+'''
+
+'''
+res=v.fibonacci_sequence(9)
+print(res)
+'''
+
+'''
+res=v.sum(1,2,3,4,5)
+print(res)
+'''
+
+'''
+res=v.Celsisus_to_Fahrenheit(38)
+print(res)
+'''
+
+'''
+res=v.gcd(48,30)
+print(res)
+'''
+
+'''
+res=v.palidrome()
+print(res)
+'''
+
+'''
+res=v.sum(1,23,4,5)
+print(res)
+'''
+
+'''
+res=v.Multipication_Table(3)
+print(res)
+'''
+
+'''
+res=v.longest_word_length("Test the output deekshitha")
+print(res)
+'''
+
+'''
+res=v.check("care","race")
+print(res)
+'''
+
+
+'''
+res=v.average(1,2,3,4,5)
+print(res)
+'''
+
+'''
+res=v.Second_Largest_Element(51,41,56,76,87,89)
+print(res)
+'''
